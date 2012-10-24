@@ -25,7 +25,7 @@ if($_POST){
   if(empty($name)){
     $errors["name"]       = "Lütfen Adı, Soyadı giriniz.";
   }
-  if(empty($cellnumber)){
+  if(empty($cellnumber) || !preg_match("/^((\+90)|0)?[1-9][0-9]{9}$/", $num)){
     $errors["cellnumber"] = "Lütfen Telefon numarası giriniz.";
   }
   if(empty($email)){
